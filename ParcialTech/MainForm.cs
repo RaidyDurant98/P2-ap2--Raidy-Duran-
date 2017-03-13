@@ -26,5 +26,10 @@ namespace ParcialTech
         {
             new RetencionesRegistroForm().Show();
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EmpleadosRegistroForm().Show();
+        }
     }
 }

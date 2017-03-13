@@ -16,5 +16,21 @@ namespace DAL
 
         public DbSet<Retenciones> Retencion { get; set; }
         public DbSet<TiposEmails> TipoEmail { get; set; }
+        public DbSet<Empleados> Empleado { get; set; }
+        public DbSet<EmpleadosRetenciones> Relacion { get; set; }
+        public DbSet<EmpleadosEmails> EmpleadoEmail { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Entidades.Retenciones>()
+                .HasMany(retencion => retencion.Empleados)
+                .WithMany(empleado => empleado.Retenciones)
+                .Map(empleadoRetencion =>
+                {
+                    /*facturaProducto.MapLeftKey("FacturaId");
+                    facturaProducto.MapRightKey("ProductoId");
+                    facturaProducto.ToTable("FacturasProductos");*/
+                });
+        }
     }
 }

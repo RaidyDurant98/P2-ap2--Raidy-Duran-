@@ -12,5 +12,12 @@ namespace Entidades
         public int RetencionId { get; set; }
         public string Descripcion { get; set; }
         public double Valor { get; set; }
+
+        public virtual List<Entidades.Empleados> Empleados { get; set; }
+
+        public Retenciones()
+        {
+            Empleados = new List<Entidades.Empleados>();
+        }
     }
 }

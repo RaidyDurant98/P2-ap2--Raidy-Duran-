@@ -32,6 +32,7 @@
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retencionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipoEmailToolStripMenuItem,
-            this.retencionesToolStripMenuItem});
+            this.retencionesToolStripMenuItem,
+            this.empleadosToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -57,16 +59,23 @@
             // tipoEmailToolStripMenuItem
             // 
             this.tipoEmailToolStripMenuItem.Name = "tipoEmailToolStripMenuItem";
-            this.tipoEmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tipoEmailToolStripMenuItem.Text = "Tipo Email";
+            this.tipoEmailToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.tipoEmailToolStripMenuItem.Text = "Tipos Emails";
             this.tipoEmailToolStripMenuItem.Click += new System.EventHandler(this.tipoEmailToolStripMenuItem_Click);
             // 
             // retencionesToolStripMenuItem
             // 
             this.retencionesToolStripMenuItem.Name = "retencionesToolStripMenuItem";
-            this.retencionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.retencionesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.retencionesToolStripMenuItem.Text = "Retenciones";
             this.retencionesToolStripMenuItem.Click += new System.EventHandler(this.retencionesToolStripMenuItem_Click);
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -90,6 +99,7 @@
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem retencionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
     }
 }
 

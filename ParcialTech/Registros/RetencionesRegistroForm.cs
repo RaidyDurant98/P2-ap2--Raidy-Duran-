@@ -64,7 +64,6 @@ namespace ParcialTech.Registros
             else
             {
                 var retencion = new Retenciones();
-                int id = 0;
 
                 retencion.RetencionId = Utilidades.TOINT(retencionIdMaskedTextBox.Text);
                 retencion.Descripcion = descripcionTextBox.Text;
@@ -72,20 +71,11 @@ namespace ParcialTech.Registros
 
                 if (retencion != null)
                 {
-                    if (id != retencion.RetencionId)
-                    {
-                        if (BLL.RetencionesBLL.Modificar(retencion))
-                            MessageBox.Show("La retencion se modifico con exito.");
-                        else
-                            MessageBox.Show("No se pudo modificar la retencion.");
-                    }
+
+                    if (BLL.RetencionesBLL.Guardar(retencion))
+                        MessageBox.Show("La retencion se guardo con exito.");
                     else
-                    {
-                        if (BLL.RetencionesBLL.Guardar(retencion))
-                            MessageBox.Show("La retencion se guardo con exito.");
-                        else
-                            MessageBox.Show("No se pudo guardar la retencion.");
-                    }
+                        MessageBox.Show("No se pudo guardar la retencion.");
                 }
 
                 Limpiar();
