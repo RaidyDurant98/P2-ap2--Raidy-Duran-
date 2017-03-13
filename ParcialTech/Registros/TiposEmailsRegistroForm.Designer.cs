@@ -35,9 +35,9 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.tipoIdTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.CamposVacioserrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TipoIdmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             tipoIdLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CamposVacioserrorProvider)).BeginInit();
@@ -101,13 +101,6 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // tipoIdTextBox
-            // 
-            this.tipoIdTextBox.Location = new System.Drawing.Point(79, 42);
-            this.tipoIdTextBox.Name = "tipoIdTextBox";
-            this.tipoIdTextBox.Size = new System.Drawing.Size(43, 20);
-            this.tipoIdTextBox.TabIndex = 10;
-            // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.Location = new System.Drawing.Point(79, 68);
@@ -119,17 +112,25 @@
             // 
             this.CamposVacioserrorProvider.ContainerControl = this;
             // 
+            // TipoIdmaskedTextBox
+            // 
+            this.TipoIdmaskedTextBox.Location = new System.Drawing.Point(79, 43);
+            this.TipoIdmaskedTextBox.Mask = "999999";
+            this.TipoIdmaskedTextBox.Name = "TipoIdmaskedTextBox";
+            this.TipoIdmaskedTextBox.Size = new System.Drawing.Size(43, 20);
+            this.TipoIdmaskedTextBox.TabIndex = 17;
+            // 
             // TiposEmailsRegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.TipoIdmaskedTextBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(tipoIdLabel);
-            this.Controls.Add(this.tipoIdTextBox);
             this.Controls.Add(descripcionLabel);
             this.Controls.Add(this.descripcionTextBox);
             this.Name = "TiposEmailsRegistroForm";
@@ -147,8 +148,8 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.TextBox tipoIdTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.ErrorProvider CamposVacioserrorProvider;
+        private System.Windows.Forms.MaskedTextBox TipoIdmaskedTextBox;
     }
 }

@@ -55,13 +55,6 @@
             retencionIdLabel.TabIndex = 1;
             retencionIdLabel.Text = "Retencion Id:";
             // 
-            // retencionIdMaskedTextBox
-            // 
-            this.retencionIdMaskedTextBox.Location = new System.Drawing.Point(85, 30);
-            this.retencionIdMaskedTextBox.Name = "retencionIdMaskedTextBox";
-            this.retencionIdMaskedTextBox.Size = new System.Drawing.Size(41, 20);
-            this.retencionIdMaskedTextBox.TabIndex = 2;
-            // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
@@ -70,13 +63,6 @@
             descripcionLabel.Size = new System.Drawing.Size(66, 13);
             descripcionLabel.TabIndex = 3;
             descripcionLabel.Text = "Descripcion:";
-            // 
-            // descripcionTextBox
-            // 
-            this.descripcionTextBox.Location = new System.Drawing.Point(85, 56);
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(193, 20);
-            this.descripcionTextBox.TabIndex = 4;
             // 
             // valorLabel
             // 
@@ -87,9 +73,25 @@
             valorLabel.TabIndex = 5;
             valorLabel.Text = "Valor:";
             // 
+            // retencionIdMaskedTextBox
+            // 
+            this.retencionIdMaskedTextBox.Location = new System.Drawing.Point(85, 30);
+            this.retencionIdMaskedTextBox.Mask = "99999999";
+            this.retencionIdMaskedTextBox.Name = "retencionIdMaskedTextBox";
+            this.retencionIdMaskedTextBox.Size = new System.Drawing.Size(41, 20);
+            this.retencionIdMaskedTextBox.TabIndex = 2;
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.Location = new System.Drawing.Point(85, 56);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(193, 20);
+            this.descripcionTextBox.TabIndex = 4;
+            // 
             // valorMaskedTextBox
             // 
             this.valorMaskedTextBox.Location = new System.Drawing.Point(85, 82);
+            this.valorMaskedTextBox.Mask = "99999999999999999999999";
             this.valorMaskedTextBox.Name = "valorMaskedTextBox";
             this.valorMaskedTextBox.Size = new System.Drawing.Size(193, 20);
             this.valorMaskedTextBox.TabIndex = 6;

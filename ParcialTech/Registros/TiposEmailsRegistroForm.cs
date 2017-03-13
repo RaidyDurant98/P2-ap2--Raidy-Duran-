@@ -20,7 +20,7 @@ namespace ParcialTech.Registros
 
         private void Limpiar()
         {
-            tipoIdTextBox.Clear();
+            TipoIdmaskedTextBox.Clear();
             descripcionTextBox.Clear();
             CamposVacioserrorProvider.Clear();
 
@@ -61,13 +61,13 @@ namespace ParcialTech.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tipoIdTextBox.Text))
+            if (string.IsNullOrEmpty(TipoIdmaskedTextBox.Text))
             {
                 MessageBox.Show("El id a evaluar esta vacio.");
             }
             else
             {
-                int id = Utilidades.TOINT(tipoIdTextBox.Text);
+                int id = Utilidades.TOINT(TipoIdmaskedTextBox.Text);
                 var tipo = TiposEmailBLL.Buscar(p => p.TipoId == id);
 
                 if (tipo != null)
@@ -84,13 +84,13 @@ namespace ParcialTech.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if (!Validar() || string.IsNullOrEmpty(tipoIdTextBox.Text))
+            if (!Validar() || string.IsNullOrEmpty(TipoIdmaskedTextBox.Text))
             {
                 MessageBox.Show("Hay campos vacios.");
             }
             else
             {
-                int id = Utilidades.TOINT(tipoIdTextBox.Text);
+                int id = Utilidades.TOINT(TipoIdmaskedTextBox.Text);
 
                 if (BLL.TiposEmailBLL.Eliminar(BLL.TiposEmailBLL.Buscar(p => p.TipoId == id)))
                 {
