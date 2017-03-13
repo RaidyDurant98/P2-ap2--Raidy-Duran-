@@ -38,7 +38,7 @@ namespace ParcialTech.Registros
             return true;
         }
 
-        private void Guardarbutton_Click_1(object sender, EventArgs e)
+        private void Guardarbutton_Click(object sender, EventArgs e)
         {
             TiposEmails tipo = new TiposEmails();
 
@@ -59,7 +59,7 @@ namespace ParcialTech.Registros
             Limpiar();
         }
 
-        private void Buscarbutton_Click_1(object sender, EventArgs e)
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tipoIdTextBox.Text))
             {
@@ -82,7 +82,7 @@ namespace ParcialTech.Registros
             }
         }
 
-        private void Eliminarbutton_Click_1(object sender, EventArgs e)
+        private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             if (!Validar() || string.IsNullOrEmpty(tipoIdTextBox.Text))
             {
@@ -102,7 +102,7 @@ namespace ParcialTech.Registros
             }
         }
 
-        private void Nuevobutton_Click_1(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }

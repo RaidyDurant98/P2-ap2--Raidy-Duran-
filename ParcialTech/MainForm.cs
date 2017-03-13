@@ -21,5 +21,10 @@ namespace ParcialTech
         {
             new TiposEmailsRegistroForm().Show();
         }
+
+        private void retencionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new RetencionesRegistroForm().Show();
+        }
     }
 }

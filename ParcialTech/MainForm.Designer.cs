@@ -66,6 +66,7 @@
             this.retencionesToolStripMenuItem.Name = "retencionesToolStripMenuItem";
             this.retencionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.retencionesToolStripMenuItem.Text = "Retenciones";
+            this.retencionesToolStripMenuItem.Click += new System.EventHandler(this.retencionesToolStripMenuItem_Click);
             // 
             // MainForm
             // 

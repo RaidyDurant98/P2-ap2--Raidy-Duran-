@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\RetencionesRegistroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RetencionesRegistroForm.Designer.cs">
+      <DependentUpon>RetencionesRegistroForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\TiposEmailsRegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registros\RetencionesRegistroForm.resx">
+      <DependentUpon>RetencionesRegistroForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\TiposEmailsRegistroForm.resx">
       <DependentUpon>TiposEmailsRegistroForm.cs</DependentUpon>
     </EmbeddedResource>
