@@ -60,6 +60,7 @@ namespace ParcialTech.Registros
             if (!Validar())
             {
                 MessageBox.Show("Por favor llenar los campos vacios.");
+                Limpiar();
             }
             else
             {
@@ -87,6 +88,7 @@ namespace ParcialTech.Registros
             if (string.IsNullOrEmpty(retencionIdMaskedTextBox.Text))
             {
                 MessageBox.Show("No ahi ningun Id para poder evaluar.");
+                Limpiar();
             }
             else
             {
@@ -110,7 +112,7 @@ namespace ParcialTech.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if (!Validar() || string.IsNullOrEmpty(retencionIdMaskedTextBox.Text))
+            if (string.IsNullOrEmpty(retencionIdMaskedTextBox.Text))
             {
                 MessageBox.Show("No se puede eliminar porque hay campos vacios.");
                 Limpiar();
@@ -126,7 +128,6 @@ namespace ParcialTech.Registros
                 }
                 else
                 {
-                    Limpiar();
                     MessageBox.Show("La retencion no se pudo eliminar.");
                 }
             }

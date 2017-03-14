@@ -13,6 +13,7 @@ namespace Entidades
         public string Nombres { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public double Sueldo { get; set; }
+        public int RetencionId { get; set; }
 
         public virtual List<Retenciones> Retenciones { get; set; }
 

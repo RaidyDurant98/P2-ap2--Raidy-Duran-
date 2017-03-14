@@ -45,6 +45,7 @@ namespace ParcialTech.Registros
             if (!Validar())
             {
                 MessageBox.Show("Por favor llenar los campos vacio.");
+                Limpiar();
             }
             else
             {
@@ -64,6 +65,7 @@ namespace ParcialTech.Registros
             if (string.IsNullOrEmpty(TipoIdmaskedTextBox.Text))
             {
                 MessageBox.Show("El id a evaluar esta vacio.");
+                Limpiar();
             }
             else
             {
@@ -84,9 +86,10 @@ namespace ParcialTech.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if (!Validar() || string.IsNullOrEmpty(TipoIdmaskedTextBox.Text))
+            if (string.IsNullOrEmpty(TipoIdmaskedTextBox.Text))
             {
                 MessageBox.Show("Hay campos vacios.");
+                Limpiar();
             }
             else
             {

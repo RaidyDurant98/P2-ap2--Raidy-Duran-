@@ -33,6 +33,7 @@
             System.Windows.Forms.Label nombresLabel;
             System.Windows.Forms.Label fechaNacimientoLabel;
             System.Windows.Forms.Label sueldoLabel;
+            System.Windows.Forms.Label retencionesLabel;
             this.empleadoIdMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.fechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -43,19 +44,23 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.CamposVacioserrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.DetallegroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.retencionesComboBox = new System.Windows.Forms.ComboBox();
+            this.Agregarbutton = new System.Windows.Forms.Button();
+            this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             empleadoIdLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             fechaNacimientoLabel = new System.Windows.Forms.Label();
             sueldoLabel = new System.Windows.Forms.Label();
+            retencionesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CamposVacioserrorProvider)).BeginInit();
             this.DetallegroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // empleadoIdLabel
             // 
             empleadoIdLabel.AutoSize = true;
-            empleadoIdLabel.Location = new System.Drawing.Point(146, 31);
+            empleadoIdLabel.Location = new System.Drawing.Point(12, 26);
             empleadoIdLabel.Name = "empleadoIdLabel";
             empleadoIdLabel.Size = new System.Drawing.Size(69, 13);
             empleadoIdLabel.TabIndex = 1;
@@ -64,7 +69,7 @@
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(146, 57);
+            nombresLabel.Location = new System.Drawing.Point(12, 52);
             nombresLabel.Name = "nombresLabel";
             nombresLabel.Size = new System.Drawing.Size(52, 13);
             nombresLabel.TabIndex = 3;
@@ -73,7 +78,7 @@
             // fechaNacimientoLabel
             // 
             fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(146, 84);
+            fechaNacimientoLabel.Location = new System.Drawing.Point(12, 79);
             fechaNacimientoLabel.Name = "fechaNacimientoLabel";
             fechaNacimientoLabel.Size = new System.Drawing.Size(96, 13);
             fechaNacimientoLabel.TabIndex = 5;
@@ -82,7 +87,7 @@
             // sueldoLabel
             // 
             sueldoLabel.AutoSize = true;
-            sueldoLabel.Location = new System.Drawing.Point(146, 109);
+            sueldoLabel.Location = new System.Drawing.Point(12, 104);
             sueldoLabel.Name = "sueldoLabel";
             sueldoLabel.Size = new System.Drawing.Size(43, 13);
             sueldoLabel.TabIndex = 7;
@@ -90,7 +95,7 @@
             // 
             // empleadoIdMaskedTextBox
             // 
-            this.empleadoIdMaskedTextBox.Location = new System.Drawing.Point(248, 28);
+            this.empleadoIdMaskedTextBox.Location = new System.Drawing.Point(114, 23);
             this.empleadoIdMaskedTextBox.Mask = "9999999";
             this.empleadoIdMaskedTextBox.Name = "empleadoIdMaskedTextBox";
             this.empleadoIdMaskedTextBox.Size = new System.Drawing.Size(54, 20);
@@ -98,7 +103,7 @@
             // 
             // nombresTextBox
             // 
-            this.nombresTextBox.Location = new System.Drawing.Point(248, 54);
+            this.nombresTextBox.Location = new System.Drawing.Point(114, 49);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombresTextBox.TabIndex = 4;
@@ -107,14 +112,14 @@
             // 
             this.fechaNacimientoDateTimePicker.CustomFormat = "yyyy/MM/dd";
             this.fechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(248, 80);
+            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(114, 75);
             this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
             this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaNacimientoDateTimePicker.TabIndex = 6;
             // 
             // sueldoMaskedTextBox
             // 
-            this.sueldoMaskedTextBox.Location = new System.Drawing.Point(248, 106);
+            this.sueldoMaskedTextBox.Location = new System.Drawing.Point(114, 101);
             this.sueldoMaskedTextBox.Mask = "999999999999";
             this.sueldoMaskedTextBox.Name = "sueldoMaskedTextBox";
             this.sueldoMaskedTextBox.Size = new System.Drawing.Size(200, 20);
@@ -122,7 +127,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(391, 414);
+            this.Eliminarbutton.Location = new System.Drawing.Point(239, 349);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 21;
@@ -132,7 +137,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(277, 414);
+            this.Guardarbutton.Location = new System.Drawing.Point(125, 349);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 20;
@@ -142,7 +147,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(167, 415);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 350);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 19;
@@ -152,7 +157,7 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(373, 21);
+            this.Buscarbutton.Location = new System.Drawing.Point(239, 16);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
             this.Buscarbutton.TabIndex = 22;
@@ -166,26 +171,57 @@
             // 
             // DetallegroupBox
             // 
-            this.DetallegroupBox.Controls.Add(this.textBox1);
-            this.DetallegroupBox.Location = new System.Drawing.Point(12, 170);
+            this.DetallegroupBox.Controls.Add(this.DetalledataGridView);
+            this.DetallegroupBox.Controls.Add(this.Agregarbutton);
+            this.DetallegroupBox.Controls.Add(retencionesLabel);
+            this.DetallegroupBox.Controls.Add(this.retencionesComboBox);
+            this.DetallegroupBox.Location = new System.Drawing.Point(12, 137);
             this.DetallegroupBox.Name = "DetallegroupBox";
-            this.DetallegroupBox.Size = new System.Drawing.Size(564, 239);
+            this.DetallegroupBox.Size = new System.Drawing.Size(310, 197);
             this.DetallegroupBox.TabIndex = 23;
             this.DetallegroupBox.TabStop = false;
             this.DetallegroupBox.Text = "Detalle";
             // 
-            // textBox1
+            // retencionesLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            retencionesLabel.AutoSize = true;
+            retencionesLabel.Location = new System.Drawing.Point(6, 25);
+            retencionesLabel.Name = "retencionesLabel";
+            retencionesLabel.Size = new System.Drawing.Size(70, 13);
+            retencionesLabel.TabIndex = 0;
+            retencionesLabel.Text = "Retenciones:";
+            // 
+            // retencionesComboBox
+            // 
+            this.retencionesComboBox.FormattingEnabled = true;
+            this.retencionesComboBox.Location = new System.Drawing.Point(82, 22);
+            this.retencionesComboBox.Name = "retencionesComboBox";
+            this.retencionesComboBox.Size = new System.Drawing.Size(121, 21);
+            this.retencionesComboBox.TabIndex = 1;
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Location = new System.Drawing.Point(227, 20);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Agregarbutton.TabIndex = 2;
+            this.Agregarbutton.Text = "Agregar";
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
+            // 
+            // DetalledataGridView
+            // 
+            this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalledataGridView.Location = new System.Drawing.Point(9, 49);
+            this.DetalledataGridView.Name = "DetalledataGridView";
+            this.DetalledataGridView.Size = new System.Drawing.Size(293, 142);
+            this.DetalledataGridView.TabIndex = 3;
             // 
             // EmpleadosRegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 451);
+            this.ClientSize = new System.Drawing.Size(334, 385);
             this.Controls.Add(this.DetallegroupBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -205,6 +241,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CamposVacioserrorProvider)).EndInit();
             this.DetallegroupBox.ResumeLayout(false);
             this.DetallegroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +259,8 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ErrorProvider CamposVacioserrorProvider;
         private System.Windows.Forms.GroupBox DetallegroupBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView DetalledataGridView;
+        private System.Windows.Forms.Button Agregarbutton;
+        private System.Windows.Forms.ComboBox retencionesComboBox;
     }
 }

@@ -10,11 +10,20 @@ namespace BLL
     {
         public static bool Guardar(Entidades.Empleados empleado)
         {
-            using (var conec = new DAL.Respository<Entidades.Empleados>())
+            using (var conec = new DAL.ParcialDb())
             {
                 try
                 {
-                    return conec.Guardar(empleado);
+
+                    conec.Empleado.Add(empleado);
+
+                    foreach (var g in empleado.Retenciones)
+                    {
+                        conec.Entry(g).State = System.Data.Entity.EntityState.Unchanged;
+                    }
+
+                    conec.SaveChanges();
+                    return true;
                 }
                 catch (Exception)
                 {
@@ -64,11 +73,16 @@ namespace BLL
 
         public static Entidades.Empleados Buscar(Expression<Func<Entidades.Empleados, bool>> criterio)
         {
+            var empleado = new Entidades.Empleados();
+
             using (var conec = new DAL.Respository<Entidades.Empleados>())
             {
                 try
                 {
-                    return conec.Buscar(criterio);
+                    empleado = conec.Buscar(criterio);
+
+                    if(empleado != null)
+                        empleado.Retenciones.Count();
                 }
                 catch (Exception)
                 {
@@ -76,6 +90,8 @@ namespace BLL
                     throw;
                 }
             }
+
+            return empleado;
         }
 
         public static List<Entidades.Empleados> GetList(Expression<Func<Entidades.Empleados, bool>> criterio)

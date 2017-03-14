@@ -12,23 +12,31 @@ namespace ParcialTech.Registros
 {
     public partial class EmpleadosRegistroForm : Form
     {
+
+        Entidades.Empleados Empleado;
+
         public EmpleadosRegistroForm()
         {
             InitializeComponent();
+            Limpiar();
         }
 
         private void EmpleadosRegistroForm_Load(object sender, EventArgs e)
         {
-
+            LlenarCombo();
         }
 
         private void Limpiar()
         {
+            Empleado = new Empleados();
+
             empleadoIdMaskedTextBox.Clear();
             nombresTextBox.Clear();
             fechaNacimientoDateTimePicker.Value = DateTime.Today;
             sueldoMaskedTextBox.Clear();
             CamposVacioserrorProvider.Clear();
+            DetalledataGridView.DataSource = null;
+            retencionesComboBox.Text = null;
 
             nombresTextBox.Focus();
         }
@@ -47,19 +55,40 @@ namespace ParcialTech.Registros
                 CamposVacioserrorProvider.SetError(sueldoMaskedTextBox, "Llenar el campo vacio.");
                 interruptor = false;
             }
+            if (string.IsNullOrEmpty(retencionesComboBox.Text))
+            {
+                CamposVacioserrorProvider.SetError(retencionesComboBox, "Llenar el campo vacio.");
+                interruptor = false;
+            }
 
             return interruptor;
         }
 
+        private void LlenarCombo()
+        {
+            List<Entidades.Retenciones> lista = BLL.RetencionesBLL.GetListAll();
+
+            retencionesComboBox.DataSource = lista;
+            retencionesComboBox.DisplayMember = "Descripcion";
+            retencionesComboBox.ValueMember = "RetencionId";
+        }
+
         private Entidades.Empleados LlenarCampos()
         {
-            var empleado = new Entidades.Empleados();
+            //string retencion = retencionesComboBox.SelectedValue.ToString();
 
-            empleado.Nombres = nombresTextBox.Text;
-            empleado.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
-            empleado.Sueldo = Utilidades.TOINT(sueldoMaskedTextBox.Text);
+            Empleado.Nombres = nombresTextBox.Text;
+            Empleado.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
+            Empleado.Sueldo = Utilidades.TOINT(sueldoMaskedTextBox.Text);
+            Empleado.RetencionId = (int)retencionesComboBox.SelectedValue;
 
-            return empleado;
+            return Empleado;
+        }
+
+        private void LlenarGrid(Entidades.Empleados empleado)
+        {
+            DetalledataGridView.DataSource = null;
+            DetalledataGridView.DataSource = empleado.Retenciones;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -72,6 +101,7 @@ namespace ParcialTech.Registros
             if (!Validar())
             {
                 MessageBox.Show("Por favor llenar los campos vacios.");
+                Limpiar();
             }
             else
             {
@@ -97,19 +127,23 @@ namespace ParcialTech.Registros
             if (string.IsNullOrEmpty(empleadoIdMaskedTextBox.Text))
             {
                 MessageBox.Show("No ahi ningun Id para poder evaluar.");
+                Limpiar();
             }
             else
             {
                 int id = Utilidades.TOINT(empleadoIdMaskedTextBox.Text);
-                var empleado = new Empleados();
+                var empleado = BLL.EmpleadosBLL.Buscar(p => p.EmpleadoId == id);
 
-                empleado = BLL.EmpleadosBLL.Buscar(p => p.EmpleadoId == id);
+                Empleado = new Empleados();
 
                 if (empleado != null)
                 {
                     nombresTextBox.Text = empleado.Nombres;
                     fechaNacimientoDateTimePicker.Value = empleado.FechaNacimiento;
                     sueldoMaskedTextBox.Text = empleado.Sueldo.ToString();
+                    retencionesComboBox.SelectedValue = empleado.RetencionId;
+
+                    LlenarGrid(empleado);
                 }
                 else
                 {
@@ -121,7 +155,7 @@ namespace ParcialTech.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if (!Validar() || string.IsNullOrEmpty(empleadoIdMaskedTextBox.Text))
+            if (!Validar())
             {
                 MessageBox.Show("No se puede eliminar porque hay campos vacios.");
                 Limpiar();
@@ -140,6 +174,16 @@ namespace ParcialTech.Registros
                     MessageBox.Show("El empleado no se pudo eliminar.");
                 }
             }
+        }
+
+        private void Agregarbutton_Click(object sender, EventArgs e)
+        {
+            Entidades.Retenciones retencion = new Retenciones();
+
+            retencion = (Entidades.Retenciones)retencionesComboBox.SelectedItem;
+            Empleado.Retenciones.Add(retencion);
+
+            LlenarGrid(Empleado);
         }
     }
 }

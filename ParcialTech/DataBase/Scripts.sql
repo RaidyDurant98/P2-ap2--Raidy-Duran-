@@ -13,7 +13,9 @@ create table Empleados(
 EmpleadoId int identity(1,1) primary key,
 Nombres varchar(80),
 FechaNacimiento date,
-Sueldo float
+Sueldo float,
+RetencionId int,
+Retenciones varchar(255)
 );
 
 create table EmpleadosRetenciones(

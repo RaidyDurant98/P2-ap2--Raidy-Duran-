@@ -17,8 +17,6 @@ namespace DAL
         public DbSet<Retenciones> Retencion { get; set; }
         public DbSet<TiposEmails> TipoEmail { get; set; }
         public DbSet<Empleados> Empleado { get; set; }
-        public DbSet<EmpleadosRetenciones> Relacion { get; set; }
-        public DbSet<EmpleadosEmails> EmpleadoEmail { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,9 +25,9 @@ namespace DAL
                 .WithMany(empleado => empleado.Retenciones)
                 .Map(empleadoRetencion =>
                 {
-                    /*facturaProducto.MapLeftKey("FacturaId");
-                    facturaProducto.MapRightKey("ProductoId");
-                    facturaProducto.ToTable("FacturasProductos");*/
+                    empleadoRetencion.MapLeftKey("EmpleadoId");
+                    empleadoRetencion.MapRightKey("RetencionId");
+                    empleadoRetencion.ToTable("EmpleadosRetenciones");
                 });
         }
     }
