@@ -11,5 +11,12 @@ namespace Entidades
         [Key]
         public int TipoId { get; set; }
         public string Descripcion { get; set; }
+
+        public virtual ICollection<EmpleadosEmails> Relacion { get; set; }
+
+        public TiposEmails()
+        {
+            this.Relacion = new HashSet<EmpleadosEmails>();
+        }
     }
 }

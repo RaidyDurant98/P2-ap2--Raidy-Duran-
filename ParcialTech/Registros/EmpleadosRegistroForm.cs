@@ -12,8 +12,8 @@ namespace ParcialTech.Registros
 {
     public partial class EmpleadosRegistroForm : Form
     {
-
         Entidades.Empleados Empleado;
+        Entidades.EmpleadosEmails Detalle;
 
         public EmpleadosRegistroForm()
         {
@@ -29,14 +29,20 @@ namespace ParcialTech.Registros
         private void Limpiar()
         {
             Empleado = new Empleados();
+            Detalle = new EmpleadosEmails();
 
             empleadoIdMaskedTextBox.Clear();
             nombresTextBox.Clear();
             fechaNacimientoDateTimePicker.Value = DateTime.Today;
             sueldoMaskedTextBox.Clear();
             CamposVacioserrorProvider.Clear();
-            DetalledataGridView.DataSource = null;
+            RetencionesdataGridView.DataSource = null;
             retencionesComboBox.Text = null;
+
+            TipoIdtextBox.Clear();
+            TipotextBox.Clear();
+            EmailtextBox.Clear();
+            TiposEmailsdataGridView.DataSource = null;
 
             nombresTextBox.Focus();
         }
@@ -75,8 +81,6 @@ namespace ParcialTech.Registros
 
         private Entidades.Empleados LlenarCampos()
         {
-            //string retencion = retencionesComboBox.SelectedValue.ToString();
-
             Empleado.Nombres = nombresTextBox.Text;
             Empleado.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
             Empleado.Sueldo = Utilidades.TOINT(sueldoMaskedTextBox.Text);
@@ -85,10 +89,21 @@ namespace ParcialTech.Registros
             return Empleado;
         }
 
-        private void LlenarGrid(Entidades.Empleados empleado)
+        private void LlenarGridRetenciones(Entidades.Empleados empleado)
         {
-            DetalledataGridView.DataSource = null;
-            DetalledataGridView.DataSource = empleado.Retenciones;
+            RetencionesdataGridView.DataSource = null;
+            RetencionesdataGridView.DataSource = empleado.Retenciones;
+        }
+
+        private void LlenarGridTiposEmails(Entidades.Empleados empleado)
+        {
+            TiposEmailsdataGridView.DataSource = null;
+            TiposEmailsdataGridView.DataSource = empleado.Relacion.ToList();
+
+            this.TiposEmailsdataGridView.Columns["Id"].Visible = false;
+            this.TiposEmailsdataGridView.Columns["EmpleadoId"].Visible = false;
+            this.TiposEmailsdataGridView.Columns["TipoEmail"].Visible = false;
+            this.TiposEmailsdataGridView.Columns["Empleado"].Visible = false;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -134,8 +149,6 @@ namespace ParcialTech.Registros
                 int id = Utilidades.TOINT(empleadoIdMaskedTextBox.Text);
                 var empleado = BLL.EmpleadosBLL.Buscar(p => p.EmpleadoId == id);
 
-                Empleado = new Empleados();
-
                 if (empleado != null)
                 {
                     nombresTextBox.Text = empleado.Nombres;
@@ -143,7 +156,8 @@ namespace ParcialTech.Registros
                     sueldoMaskedTextBox.Text = empleado.Sueldo.ToString();
                     retencionesComboBox.SelectedValue = empleado.RetencionId;
 
-                    LlenarGrid(empleado);
+                    LlenarGridRetenciones(empleado);
+                    LlenarGridTiposEmails(empleado);
                 }
                 else
                 {
@@ -176,14 +190,38 @@ namespace ParcialTech.Registros
             }
         }
 
-        private void Agregarbutton_Click(object sender, EventArgs e)
+        private void AgregarRetencionesbutton_Click(object sender, EventArgs e)
         {
             Entidades.Retenciones retencion = new Retenciones();
 
             retencion = (Entidades.Retenciones)retencionesComboBox.SelectedItem;
             Empleado.Retenciones.Add(retencion);
 
-            LlenarGrid(Empleado);
+            LlenarGridRetenciones(Empleado);
+        }
+
+        private void TipoIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int id = Utilidades.TOINT(TipoIdtextBox.Text);
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Detalle.TipoEmail = BLL.TiposEmailBLL.Buscar(p => p.TipoId == id);
+
+                if (Detalle.TipoEmail != null)
+                {
+                    TipotextBox.Text = Detalle.TipoEmail.Descripcion;
+                }
+
+                EmailtextBox.Focus();
+            }
+        }
+
+        private void AgragarEmailsbutton_Click(object sender, EventArgs e)
+        {
+            Empleado.AgregarDetalle(Detalle.TipoEmail, EmailtextBox.Text);
+
+            LlenarGridTiposEmails(Empleado);
         }
     }
 }

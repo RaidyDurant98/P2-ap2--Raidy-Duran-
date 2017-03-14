@@ -82,7 +82,10 @@ namespace BLL
                     empleado = conec.Buscar(criterio);
 
                     if(empleado != null)
+                    {
                         empleado.Retenciones.Count();
+                        empleado.Relacion.Count();
+                    }
                 }
                 catch (Exception)
                 {

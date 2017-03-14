@@ -17,9 +17,17 @@ namespace Entidades
 
         public virtual List<Retenciones> Retenciones { get; set; }
 
+        public virtual ICollection<EmpleadosEmails> Relacion { get; set; }
+
         public Empleados()
         {
-            Retenciones = new List<Entidades.Retenciones>();
+            this.Retenciones = new List<Entidades.Retenciones>();
+            this.Relacion = new HashSet<EmpleadosEmails>();
+        }
+
+        public void AgregarDetalle(TiposEmails tipoEmail, string email)
+        {
+            this.Relacion.Add(new EmpleadosEmails(tipoEmail.TipoId, email));
         }
     }
 }
