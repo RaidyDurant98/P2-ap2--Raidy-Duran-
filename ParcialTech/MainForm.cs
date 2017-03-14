@@ -37,14 +37,9 @@ namespace ParcialTech
             this.Close();
         }
 
-        private void tipoEmailsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Consultas.TiposEmailConsultaForm().Show();
-        }
-
-        private void retencionesToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            new Consultas.RetencionesConsultaForm().Show();
+            new Consultas.EmpleadosConsultaForm().Show();
         }
     }
 }

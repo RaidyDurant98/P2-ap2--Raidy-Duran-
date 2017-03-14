@@ -91,8 +91,8 @@ namespace DAL
             try
             {
                 EntitySet.Add(laEntidad);
-                Context.SaveChanges();
-                return true;
+                return Context.SaveChanges() > 0;
+                //return true;
 
             }
             catch (Exception)

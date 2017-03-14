@@ -48,14 +48,14 @@
             this.AgregarRetencionesbutton = new System.Windows.Forms.Button();
             this.retencionesComboBox = new System.Windows.Forms.ComboBox();
             this.DetalleEmailsgroupBox = new System.Windows.Forms.GroupBox();
+            this.EmailtextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.TipoIdtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TipotextBox = new System.Windows.Forms.TextBox();
             this.AgragarEmailsbutton = new System.Windows.Forms.Button();
             this.TiposEmailsdataGridView = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.EmailtextBox = new System.Windows.Forms.TextBox();
             empleadoIdLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             fechaNacimientoLabel = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             // empleadoIdLabel
             // 
             empleadoIdLabel.AutoSize = true;
-            empleadoIdLabel.Location = new System.Drawing.Point(114, 24);
+            empleadoIdLabel.Location = new System.Drawing.Point(135, 22);
             empleadoIdLabel.Name = "empleadoIdLabel";
             empleadoIdLabel.Size = new System.Drawing.Size(69, 13);
             empleadoIdLabel.TabIndex = 1;
@@ -80,7 +80,7 @@
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(114, 50);
+            nombresLabel.Location = new System.Drawing.Point(135, 48);
             nombresLabel.Name = "nombresLabel";
             nombresLabel.Size = new System.Drawing.Size(52, 13);
             nombresLabel.TabIndex = 3;
@@ -89,7 +89,7 @@
             // fechaNacimientoLabel
             // 
             fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(114, 77);
+            fechaNacimientoLabel.Location = new System.Drawing.Point(135, 75);
             fechaNacimientoLabel.Name = "fechaNacimientoLabel";
             fechaNacimientoLabel.Size = new System.Drawing.Size(96, 13);
             fechaNacimientoLabel.TabIndex = 5;
@@ -98,7 +98,7 @@
             // sueldoLabel
             // 
             sueldoLabel.AutoSize = true;
-            sueldoLabel.Location = new System.Drawing.Point(114, 102);
+            sueldoLabel.Location = new System.Drawing.Point(135, 100);
             sueldoLabel.Name = "sueldoLabel";
             sueldoLabel.Size = new System.Drawing.Size(43, 13);
             sueldoLabel.TabIndex = 7;
@@ -115,7 +115,7 @@
             // 
             // empleadoIdMaskedTextBox
             // 
-            this.empleadoIdMaskedTextBox.Location = new System.Drawing.Point(216, 21);
+            this.empleadoIdMaskedTextBox.Location = new System.Drawing.Point(237, 19);
             this.empleadoIdMaskedTextBox.Mask = "9999999";
             this.empleadoIdMaskedTextBox.Name = "empleadoIdMaskedTextBox";
             this.empleadoIdMaskedTextBox.Size = new System.Drawing.Size(54, 20);
@@ -123,7 +123,7 @@
             // 
             // nombresTextBox
             // 
-            this.nombresTextBox.Location = new System.Drawing.Point(216, 47);
+            this.nombresTextBox.Location = new System.Drawing.Point(237, 45);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombresTextBox.TabIndex = 4;
@@ -132,14 +132,14 @@
             // 
             this.fechaNacimientoDateTimePicker.CustomFormat = "yyyy/MM/dd";
             this.fechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(216, 73);
+            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(237, 71);
             this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
             this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaNacimientoDateTimePicker.TabIndex = 6;
             // 
             // sueldoMaskedTextBox
             // 
-            this.sueldoMaskedTextBox.Location = new System.Drawing.Point(216, 99);
+            this.sueldoMaskedTextBox.Location = new System.Drawing.Point(237, 97);
             this.sueldoMaskedTextBox.Mask = "999999999999";
             this.sueldoMaskedTextBox.Name = "sueldoMaskedTextBox";
             this.sueldoMaskedTextBox.Size = new System.Drawing.Size(200, 20);
@@ -147,7 +147,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(351, 605);
+            this.Eliminarbutton.Location = new System.Drawing.Point(372, 603);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 21;
@@ -157,7 +157,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(234, 605);
+            this.Guardarbutton.Location = new System.Drawing.Point(255, 603);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 20;
@@ -167,7 +167,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(116, 605);
+            this.Nuevobutton.Location = new System.Drawing.Point(137, 603);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 19;
@@ -177,7 +177,7 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(341, 14);
+            this.Buscarbutton.Location = new System.Drawing.Point(362, 12);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
             this.Buscarbutton.TabIndex = 22;
@@ -195,7 +195,7 @@
             this.DetalleRetencionesgroupBox.Controls.Add(this.AgregarRetencionesbutton);
             this.DetalleRetencionesgroupBox.Controls.Add(retencionesLabel);
             this.DetalleRetencionesgroupBox.Controls.Add(this.retencionesComboBox);
-            this.DetalleRetencionesgroupBox.Location = new System.Drawing.Point(12, 135);
+            this.DetalleRetencionesgroupBox.Location = new System.Drawing.Point(33, 133);
             this.DetalleRetencionesgroupBox.Name = "DetalleRetencionesgroupBox";
             this.DetalleRetencionesgroupBox.Size = new System.Drawing.Size(529, 217);
             this.DetalleRetencionesgroupBox.TabIndex = 23;
@@ -222,6 +222,7 @@
             // 
             // retencionesComboBox
             // 
+            this.retencionesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.retencionesComboBox.FormattingEnabled = true;
             this.retencionesComboBox.Location = new System.Drawing.Point(177, 22);
             this.retencionesComboBox.Name = "retencionesComboBox";
@@ -238,12 +239,28 @@
             this.DetalleEmailsgroupBox.Controls.Add(this.TipotextBox);
             this.DetalleEmailsgroupBox.Controls.Add(this.AgragarEmailsbutton);
             this.DetalleEmailsgroupBox.Controls.Add(this.TiposEmailsdataGridView);
-            this.DetalleEmailsgroupBox.Location = new System.Drawing.Point(12, 372);
+            this.DetalleEmailsgroupBox.Location = new System.Drawing.Point(33, 370);
             this.DetalleEmailsgroupBox.Name = "DetalleEmailsgroupBox";
             this.DetalleEmailsgroupBox.Size = new System.Drawing.Size(529, 217);
             this.DetalleEmailsgroupBox.TabIndex = 24;
             this.DetalleEmailsgroupBox.TabStop = false;
             this.DetalleEmailsgroupBox.Text = "Detalle Emails";
+            // 
+            // EmailtextBox
+            // 
+            this.EmailtextBox.Location = new System.Drawing.Point(279, 25);
+            this.EmailtextBox.Name = "EmailtextBox";
+            this.EmailtextBox.Size = new System.Drawing.Size(154, 20);
+            this.EmailtextBox.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(238, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Email:";
             // 
             // TipoIdtextBox
             // 
@@ -273,6 +290,7 @@
             // 
             // TipotextBox
             // 
+            this.TipotextBox.Enabled = false;
             this.TipotextBox.Location = new System.Drawing.Point(143, 25);
             this.TipotextBox.Name = "TipotextBox";
             this.TipotextBox.Size = new System.Drawing.Size(89, 20);
@@ -296,27 +314,11 @@
             this.TiposEmailsdataGridView.Size = new System.Drawing.Size(514, 142);
             this.TiposEmailsdataGridView.TabIndex = 0;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(238, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Email:";
-            // 
-            // EmailtextBox
-            // 
-            this.EmailtextBox.Location = new System.Drawing.Point(279, 25);
-            this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(154, 20);
-            this.EmailtextBox.TabIndex = 12;
-            // 
             // EmpleadosRegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 640);
+            this.ClientSize = new System.Drawing.Size(600, 640);
             this.Controls.Add(this.DetalleEmailsgroupBox);
             this.Controls.Add(this.DetalleRetencionesgroupBox);
             this.Controls.Add(this.Buscarbutton);

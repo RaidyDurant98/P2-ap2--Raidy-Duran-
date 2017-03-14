@@ -89,6 +89,7 @@ namespace ParcialTech.Registros
 
         private Entidades.Empleados LlenarCampos()
         {
+            Empleado.EmpleadoId = Utilidades.TOINT(empleadoIdMaskedTextBox.Text);
             Empleado.Nombres = nombresTextBox.Text;
             Empleado.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
             Empleado.Sueldo = Utilidades.TOINT(sueldoMaskedTextBox.Text);
@@ -162,7 +163,6 @@ namespace ParcialTech.Registros
                     nombresTextBox.Text = empleado.Nombres;
                     fechaNacimientoDateTimePicker.Value = empleado.FechaNacimiento;
                     sueldoMaskedTextBox.Text = empleado.Sueldo.ToString();
-                    //retencionesComboBox.SelectedValue = empleado.RetencionId;
 
                     LlenarGridRetenciones(empleado);
                     LlenarGridTiposEmails(empleado);

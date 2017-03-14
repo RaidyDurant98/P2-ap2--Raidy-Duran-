@@ -34,10 +34,8 @@
             this.retencionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoEmailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.retencionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,33 +64,38 @@
             // tipoEmailToolStripMenuItem
             // 
             this.tipoEmailToolStripMenuItem.Name = "tipoEmailToolStripMenuItem";
-            this.tipoEmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tipoEmailToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.tipoEmailToolStripMenuItem.Text = "Tipos Emails";
             this.tipoEmailToolStripMenuItem.Click += new System.EventHandler(this.tipoEmailToolStripMenuItem_Click);
             // 
             // retencionesToolStripMenuItem
             // 
             this.retencionesToolStripMenuItem.Name = "retencionesToolStripMenuItem";
-            this.retencionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.retencionesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.retencionesToolStripMenuItem.Text = "Retenciones";
             this.retencionesToolStripMenuItem.Click += new System.EventHandler(this.retencionesToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tipoEmailsToolStripMenuItem,
-            this.retencionesToolStripMenuItem1,
             this.empleadosToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // empleadosToolStripMenuItem1
+            // 
+            this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
+            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.empleadosToolStripMenuItem1.Text = "Empleados";
+            this.empleadosToolStripMenuItem1.Click += new System.EventHandler(this.empleadosToolStripMenuItem1_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -100,26 +103,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // tipoEmailsToolStripMenuItem
-            // 
-            this.tipoEmailsToolStripMenuItem.Name = "tipoEmailsToolStripMenuItem";
-            this.tipoEmailsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tipoEmailsToolStripMenuItem.Text = "Tipo Emails";
-            this.tipoEmailsToolStripMenuItem.Click += new System.EventHandler(this.tipoEmailsToolStripMenuItem_Click);
-            // 
-            // retencionesToolStripMenuItem1
-            // 
-            this.retencionesToolStripMenuItem1.Name = "retencionesToolStripMenuItem1";
-            this.retencionesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.retencionesToolStripMenuItem1.Text = "Retenciones";
-            this.retencionesToolStripMenuItem1.Click += new System.EventHandler(this.retencionesToolStripMenuItem1_Click);
-            // 
-            // empleadosToolStripMenuItem1
-            // 
-            this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
-            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.empleadosToolStripMenuItem1.Text = "Empleados";
             // 
             // MainForm
             // 
@@ -146,8 +129,6 @@
         private System.Windows.Forms.ToolStripMenuItem retencionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoEmailsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem retencionesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
