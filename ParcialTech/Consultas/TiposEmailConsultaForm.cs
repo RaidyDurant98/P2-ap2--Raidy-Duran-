@@ -45,6 +45,7 @@ namespace ParcialTech.Consultas
             if (FiltrarcomboBox.SelectedIndex == 1)
             {
                 FiltrardataGridView.DataSource = BLL.TiposEmailBLL.GetListAll();
+                this.FiltrardataGridView.Columns["Relacion"].Visible = false;
             }
             else
             {
@@ -56,8 +57,9 @@ namespace ParcialTech.Consultas
                 else
                 {
                     if (FiltrarcomboBox.SelectedIndex == 0)
-                    {
+                    {                       
                         FiltrardataGridView.DataSource = BLL.TiposEmailBLL.GetList(p => p.Descripcion == FiltrartextBox.Text);
+                        this.FiltrardataGridView.Columns["Relacion"].Visible = false;
                     }
                 }
             }
@@ -65,7 +67,7 @@ namespace ParcialTech.Consultas
 
         private void TiposEmailConsultaForm_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

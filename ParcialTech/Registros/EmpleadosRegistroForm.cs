@@ -61,9 +61,14 @@ namespace ParcialTech.Registros
                 CamposVacioserrorProvider.SetError(sueldoMaskedTextBox, "Llenar el campo vacio.");
                 interruptor = false;
             }
-            if (string.IsNullOrEmpty(retencionesComboBox.Text))
+            if (RetencionesdataGridView.DataSource == null)
             {
-                CamposVacioserrorProvider.SetError(retencionesComboBox, "Llenar el campo vacio.");
+                CamposVacioserrorProvider.SetError(RetencionesdataGridView, "Llenar el campo vacio.");
+                interruptor = false;
+            }
+            if (TiposEmailsdataGridView.DataSource == null)
+            {
+                CamposVacioserrorProvider.SetError(TiposEmailsdataGridView, "Llenar el campo vacio.");
                 interruptor = false;
             }
 
@@ -77,6 +82,9 @@ namespace ParcialTech.Registros
             retencionesComboBox.DataSource = lista;
             retencionesComboBox.DisplayMember = "Descripcion";
             retencionesComboBox.ValueMember = "RetencionId";
+
+            if (retencionesComboBox.Items.Count >= 1)
+                retencionesComboBox.SelectedIndex = -1;
         }
 
         private Entidades.Empleados LlenarCampos()
@@ -154,7 +162,7 @@ namespace ParcialTech.Registros
                     nombresTextBox.Text = empleado.Nombres;
                     fechaNacimientoDateTimePicker.Value = empleado.FechaNacimiento;
                     sueldoMaskedTextBox.Text = empleado.Sueldo.ToString();
-                    retencionesComboBox.SelectedValue = empleado.RetencionId;
+                    //retencionesComboBox.SelectedValue = empleado.RetencionId;
 
                     LlenarGridRetenciones(empleado);
                     LlenarGridTiposEmails(empleado);

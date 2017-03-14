@@ -98,6 +98,8 @@ namespace BLL
 
         public static List<TiposEmails> GetListAll()
         {
+            var tipo = new TiposEmails();
+
             using (var conec = new DAL.Respository<TiposEmails>())
             {
                 try
