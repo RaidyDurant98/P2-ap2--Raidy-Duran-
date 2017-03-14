@@ -204,6 +204,7 @@
             // 
             // RetencionesdataGridView
             // 
+            this.RetencionesdataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RetencionesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RetencionesdataGridView.Location = new System.Drawing.Point(9, 63);
             this.RetencionesdataGridView.Name = "RetencionesdataGridView";
@@ -308,6 +309,7 @@
             // 
             // TiposEmailsdataGridView
             // 
+            this.TiposEmailsdataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TiposEmailsdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TiposEmailsdataGridView.Location = new System.Drawing.Point(9, 60);
             this.TiposEmailsdataGridView.Name = "TiposEmailsdataGridView";

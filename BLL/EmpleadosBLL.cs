@@ -14,7 +14,6 @@ namespace BLL
             {
                 try
                 {
-
                     conec.Empleado.Add(empleado);
 
                     foreach (var g in empleado.Retenciones)

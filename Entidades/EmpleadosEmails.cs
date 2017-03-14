@@ -15,7 +15,6 @@ namespace Entidades
         public string Email { get; set; }
 
         public virtual TiposEmails TipoEmail { get; set; }
-        public virtual Empleados Empleado { get; set; }
 
         public EmpleadosEmails()
         {

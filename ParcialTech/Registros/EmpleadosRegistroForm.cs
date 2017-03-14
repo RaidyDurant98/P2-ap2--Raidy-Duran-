@@ -112,7 +112,6 @@ namespace ParcialTech.Registros
             this.TiposEmailsdataGridView.Columns["Id"].Visible = false;
             this.TiposEmailsdataGridView.Columns["EmpleadoId"].Visible = false;
             this.TiposEmailsdataGridView.Columns["TipoEmail"].Visible = false;
-            this.TiposEmailsdataGridView.Columns["Empleado"].Visible = false;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

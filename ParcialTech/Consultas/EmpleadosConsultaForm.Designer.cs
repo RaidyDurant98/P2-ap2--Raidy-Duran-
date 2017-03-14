@@ -46,7 +46,9 @@
             // 
             // FiltrardataGridView
             // 
+            this.FiltrardataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FiltrardataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FiltrardataGridView.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.FiltrardataGridView.Location = new System.Drawing.Point(12, 133);
             this.FiltrardataGridView.Name = "FiltrardataGridView";
             this.FiltrardataGridView.Size = new System.Drawing.Size(488, 295);
@@ -71,7 +73,7 @@
             this.Filtrarbutton.Click += new System.EventHandler(this.Filtrarbutton_Click);
             // 
             // FiltrarcomboBox
-            //
+            // 
             this.FiltrarcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrarcomboBox.FormattingEnabled = true;
             this.FiltrarcomboBox.Items.AddRange(new object[] {

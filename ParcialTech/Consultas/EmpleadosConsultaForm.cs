@@ -20,6 +20,7 @@ namespace ParcialTech.Consultas
         {
             FiltrarcomboBox.Text = null;
             CamposVacioserrorProvider.Clear();
+            FiltrardataGridView.DataSource = null;
             FiltrartextBox.Clear();
         }
 
@@ -58,7 +59,7 @@ namespace ParcialTech.Consultas
                 FiltrardataGridView.DataSource = BLL.EmpleadosBLL.GetList(p => p.FechaNacimiento >= DesdedateTimePicker.Value.Date && p.FechaNacimiento <= HastadateTimePicker.Value.Date);
                 NoMostrar();
             }
-            else if (FiltrarcomboBox.SelectedIndex != 0  || FiltrarcomboBox.SelectedIndex == 2)
+            else if (FiltrarcomboBox.SelectedIndex != 0 && FiltrarcomboBox.SelectedIndex != 2)
             {
                 if (!Validar())
                 {
